@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DeepSeek Harness</title>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      display: flex; align-items: center; justify-content: center;
+      background: radial-gradient(1200px 700px at 50% -10%, #16213f 0%, #0b0f19 55%, #070a12 100%);
+      font-family: -apple-system, 'Segoe UI', 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      color: #e6edf3; -webkit-user-select: none; user-select: none;
+    }
+    .card { text-align: center; padding: 48px; }
+    .logo {
+      width: 84px; height: 84px; margin: 0 auto 24px; border-radius: 22px;
+      background: #4d6bfe; display: flex; align-items: center; justify-content: center;
+      font-size: 46px; font-weight: 800; color: #fff;
+      box-shadow: 0 10px 40px rgba(77,107,254,.45);
+    }
+    h1 { font-size: 22px; font-weight: 600; margin: 0 0 12px; letter-spacing: .5px; }
+    p { font-size: 14px; color: #8b98b0; margin: 0 0 8px; }
+    .spinner {
+      width: 20px; height: 20px; margin: 20px auto 0;
+      border: 2px solid rgba(255,255,255,.15); border-top-color: #4d6bfe;
+      border-radius: 50%; animation: spin 0.9s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    button {
+      margin-top: 20px; padding: 9px 22px; font-size: 14px;
+      color: #fff; background: #4d6bfe; border: 0; border-radius: 8px; cursor: pointer;
+    }
+    button:hover { background: #3d5bf0; }
+    #error { color: #ff7b72; max-width: 560px; word-break: break-all; }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">D</div>
+    <h1>DeepSeek Harness</h1>
+    <p id="status">正在启动 DeepSeek Harness…</p>
+    <p id="error" hidden></p>
+    <div class="spinner" id="spinner"></div>
+    <button id="retry" hidden onclick="window.desktop && window.desktop.retry()">重试</button>
+  </div>
+  <script>
+    (function () {
+      var error = new URLSearchParams(location.search).get('error');
+      if (error) {
+        document.getElementById('status').textContent = '启动失败';
+        document.getElementById('error').textContent = error;
+        document.getElementById('error').hidden = false;
+        document.getElementById('spinner').hidden = true;
+        document.getElementById('retry').hidden = false;
+      }
+    })();
+  </script>
+</body>
+</html>
