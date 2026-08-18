@@ -1,5 +1,11 @@
 # DeepSeek Harness Desktop（Linux / Ubuntu）
 
+[![GitHub Release](https://img.shields.io/github/v/release/chendaxin-xin/unbutu-deepseek-Harness-?style=flat-square&color=4d6bfe)](https://github.com/chendaxin-xin/unbutu-deepseek-Harness-/releases/latest)
+[![下载 .deb](https://img.shields.io/badge/下载-.deb-4d6bfe?style=flat-square)](https://github.com/chendaxin-xin/unbutu-deepseek-Harness-/releases/latest/download/DeepSeek-Harness-0.1.0-amd64.deb)
+[![下载 .AppImage](https://img.shields.io/badge/下载-.AppImage-4d6bfe?style=flat-square)](https://github.com/chendaxin-xin/unbutu-deepseek-Harness-/releases/latest/download/DeepSeek-Harness-0.1.0-x86_64.AppImage)
+
+> 📦 **快速下载**：[进入下载页](https://github.com/chendaxin-xin/unbutu-deepseek-Harness-/releases/latest)，或直接点上面两个「下载」徽章获取 `.deb` / `.AppImage`。
+
 非官方的 DeepSeek Harness（dsh）**Linux 桌面壳**：把 dsh 的浏览器界面封装成原生桌面窗口，
 带系统托盘、开机自启、单实例锁，并打包为 **AppImage / deb**。内置 dsh 运行时，
 **首次启动离线可用**（无需 Node.js 或 pnpm）。
